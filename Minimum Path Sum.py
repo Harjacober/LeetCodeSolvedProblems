@@ -1,19 +1,15 @@
 """
-Explanation: let us take examine the first row and first colummn alone while we
-ignore other position in the grid for now.
-First row: the sum to get to any chosen position (0,j) on the first row is strictly the
-sum of all other position to the left, (0,j) inclusive.
-Second row: the sum to get to any chosen position (i,0) on the first column is strictly the
-sum of all other position above, (0,j) inclusive.
-Since we know how to compute the sum for these positions
-let us create a 2-dimensional array called Sum of grid size and use it to store the sum to get to each position
-we can initialize all the first row(0,j) and the first column(i,0) of Sum as we've discussed
+Explanation: Let us examine the first row and first column alone while we ignore other position in the grid for now.
+First row: The sum of any chosen position (0,j) on the first row is strictly the sum of all other position to the left of it, (0,j) inclusive.
+First column: The sum of any chosen position (i,0) on the first column is strictly the sum of all other position above it, (i,0) inclusive.
+Since we know how to compute the sum for all the positions on the first row and first column, let us create a 2-dimensional array called Sum of grid size and use it to store the sum to get to each of these positions.
+We can initialize all the first row(0,j) and the first column(i,0)of Sum as we've discussed
 how to directly compute the sum at these positions above.
-Main Logic: When we are at a particular position (i,j) where i or j is not zero i.e our
+Main Logic: When we are at a particular position(i,j) where i or j is not zero i.e our
 current position is not on the first row or column. There are only two previous positions
-we are likely to have come from: (i-1,j) or (i,j-1). Since we care about the minimum sum,
-we must choose the position between (i-1,j) or (i,j-1) that has a minimum sum. Therefore,
-Sum(i,j) = min(Sum(i-1,j),Sum(i,j-1)) + Sum(i,j)
+we are likely to have come from: (i,j-1) left or (i-1,j) up.
+Since we care about the minimum sum, we must choose between positions (i,j-1) left or (i-1,j) up that has a minimum sum.
+Therefore, Sum(i,j) = min(Sum(i-1,j),Sum(i,j-1)) + Sum(i,j)
 We calculate Sum(i,j) for every positions in Sum starting from (1,1)
 The value at the bottom right of the Sum array is our answer
 """
