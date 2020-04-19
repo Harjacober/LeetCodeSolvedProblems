@@ -1,5 +1,9 @@
 # Approach 1
 class BinarySearchUsingPeak:
+    """
+This approach just finds the initial pivots and applies the normal binary search algorithm
+having the position of the lowest and highest element after rotation
+"""
     def search(self,arr,target):
         def findPeak(arr):
             n=len(arr)
