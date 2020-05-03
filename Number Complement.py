@@ -17,14 +17,16 @@ def findComplement(num):
     fnum = ~num
     #get the number of active bits
     n = floor(log(num,2))+1
-    
+    #n = len(bin(num))-2
     return ((1<<n)-1) & fnum
 
 def findComplement2(num): 
     #get the number of active bits
-    n = floor(log(num,2))+1 
+    #n = floor(log(num,2))+1
+    n = len(bin(num))-2
     return ((1<<n)-1) ^ num
 
 if __name__ == '__main__': 
     assert 2 == findComplement(5)
+    assert 2 == findComplement2(5)
     
