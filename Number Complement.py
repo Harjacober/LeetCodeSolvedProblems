@@ -16,11 +16,14 @@ def findComplement(num):
     #flip the bits including leading zeros
     fnum = ~num
     #get the number of active bits
-    bits = floor(log(num))+1
+    n = floor(log(num,2))+1
     
-    return ((1<<bits)-1) & fnum
+    return ((1<<n)-1) & fnum
 
-
+def findComplement2(num): 
+    #get the number of active bits
+    n = floor(log(num,2))+1 
+    return ((1<<n)-1) ^ num
 
 if __name__ == '__main__': 
     assert 2 == findComplement(5)
